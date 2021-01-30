@@ -23,44 +23,43 @@ func _on_PutHTTPRequest_request_completed(_result: int, _response_code: int, _he
 
 func _on_PostButton_button_up() -> void:
 	var _input_values: Dictionary = get_refreshed_textbox_values()
-	var body_text: String = _input_values.RequestBody
-	set_result_requesting_text()
-
-	body_text = remove_json_trailing_artifacts(body_text)
-	post_request.request(_input_values.URL, _input_values.Headers, false, HTTPClient.METHOD_POST, body_text)
+	post_request.request(_input_values.URL, _input_values.Headers, false, HTTPClient.METHOD_POST, _input_values.RequestBody)
 
 
 func _on_GetButton_button_up() -> void:
 	var _input_values: Dictionary = get_refreshed_textbox_values()
 	get_request.request(_input_values.URL, _input_values.Headers)
-	set_result_requesting_text()
 
 
 func _on_PutButton_button_up() -> void:
 	var _input_values: Dictionary = get_refreshed_textbox_values()
-	pass # Replace with function body.
+	put_request.request(_input_values.URL, _input_values.Headers, false, HTTPClient.METHOD_PUT, _input_values.RequestBody)
 
 
-func remove_json_trailing_artifacts(json: String) -> String:
-	if json[json.length() -2] != '"':
-		json.erase(json.length() -2 , 1)
-		json = remove_json_trailing_artifacts(json)
-	return json
+func remove_json_trailing_artifacts(_json: String) -> String:
+	if _json[_json.length() -2] != '"':
+		_json.erase(_json.length() -2 , 1)
+		_json = remove_json_trailing_artifacts(_json)
+	return _json
+
+
+func remove_url_trailing_artifacts(_url: String) -> String:
+	if _url[_url.length() -1] == ' ':
+		_url.erase(_url.length() -1 , 1)
+		_url = remove_url_trailing_artifacts(_url)
+	return _url
 
 
 func get_refreshed_textbox_values() -> Dictionary:
-	var _url: String = url_box.text
+	result_text_box.text = "Requesting . . ."
+	var _url: String = remove_url_trailing_artifacts(url_box.text)
 	var _headersRaw: String = headers_text_box.text
 	var _headers: Array = _headersRaw.split("|")
-	var _bodyRaw: String = body_text_box.text
+	var _body: String = remove_json_trailing_artifacts(body_text_box.text)
 	var _returnValues: Dictionary = {
 		"URL":_url,
 		"Headers":_headers,
-		"RequestBody":_bodyRaw
+		"RequestBody":_body
 	}
 	return _returnValues
-
-
-func set_result_requesting_text() -> void:
-	result_text_box.text = "Requesting . . ."
 

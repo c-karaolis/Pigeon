@@ -11,8 +11,6 @@ I caught myself a lot of times wanting to just dump a JSON and a URL  really fas
 
 I am open-sourcing it in case someone finds it useful.
 
-PUT request is not implemented. I have no personal use for it at the moment.
-
 I will update and add a feature to the project mostly if I have a need for it while using the client.
 
 Add headers by splitting them with the | character. See the default example. 
