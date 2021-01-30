@@ -17,7 +17,7 @@ I will update and add a feature to the project mostly if I have a need for it wh
 
 Add headers by splitting them with the | character. See the default example. 
 
-Project took ~5 hours.
+Project took ~5 hours (~2 of them went on creating the icons art. ~1 of them debugging a very silly mistake in the recursive function :P ).
 
 The project is totally not tested. The only assertion I can make is that it just works for me on my machine. :)
 
