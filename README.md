@@ -6,3 +6,5 @@ I caught myself a lot of times wanting to just dump a JSON and a URL  really fas
 I open-sourcing it in case someone finds it useful.
 
 Project took me ~3 hours.
+
+If you need something you can contact me on LinkedIn: https://www.linkedin.com/in/constantinos-karaolis-03b0b8100/
