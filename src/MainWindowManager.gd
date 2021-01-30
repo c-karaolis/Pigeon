@@ -10,8 +10,6 @@ onready var put_request: HTTPRequest = $PutHTTPRequest
 
 
 func _on_PostHTTPRequest_request_completed(_result: int, _response_code: int, _headers: PoolStringArray, _body: PoolByteArray) -> void:
-#	var json = JSON.parse(body.get_string_from_utf8())
-#	var texter = json.error if json.error != OK else json.result
 	result_text_box.text = _body.get_string_from_utf8()
 
 
@@ -27,7 +25,7 @@ func _on_PostButton_button_up() -> void:
 	var _input_values: Dictionary = get_refreshed_textbox_values()
 	var body_text: String = _input_values.RequestBody
 	set_result_requesting_text()
-#	var headers = ["Content-Type: application/json; charset=UTF-8"]
+
 	body_text = remove_json_trailing_artifacts(body_text)
 	post_request.request(_input_values.URL, _input_values.Headers, false, HTTPClient.METHOD_POST, body_text)
 
@@ -40,7 +38,6 @@ func _on_GetButton_button_up() -> void:
 
 func _on_PutButton_button_up() -> void:
 	var _input_values: Dictionary = get_refreshed_textbox_values()
-#	set_result_requesting_text()
 	pass # Replace with function body.
 
 
