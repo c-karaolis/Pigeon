@@ -45,9 +45,7 @@ func remove_json_trailing_artifacts(json: String) -> String:
 	if json[json.length() -2] != '"':
 		json.erase(json.length() -2 , 1)
 		json = remove_json_trailing_artifacts(json)
-		return json
-	else:
-		return json
+	return json
 
 
 func get_refreshed_textbox_values() -> Dictionary:
