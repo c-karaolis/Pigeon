@@ -6,9 +6,9 @@
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 0.667419
-margin_top = 1.41422
+margin_top = 1.81107
 margin_right = 0.66748
-margin_bottom = 1.41418
+margin_bottom = 1.81104
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -63,9 +63,9 @@ __meta__ = {
 
 [node name="UrlText" type="TextEdit" parent="."]
 margin_left = 3.0
-margin_top = 80.0
+margin_top = 82.3784
 margin_right = 568.0
-margin_bottom = 120.0
+margin_bottom = 122.378
 text = "https://jsonplaceholder.typicode.com/posts"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -76,7 +76,7 @@ margin_left = 3.18503
 margin_top = 24.2441
 margin_right = 568.185
 margin_bottom = 64.2441
-text = "Content-Type: application/json; charset=UTF-8"
+text = "Content-Type: application/json; charset=UTF-8 | Connection: keep-alive"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -101,10 +101,10 @@ __meta__ = {
 }
 
 [node name="UrlLabel" type="Label" parent="Labels"]
-margin_left = 3.18503
-margin_top = 65.5789
-margin_right = 43.185
-margin_bottom = 79.5789
+margin_left = 2.77795
+margin_top = 68.552
+margin_right = 42.778
+margin_bottom = 82.552
 text = "URL"
 
 [node name="HeadersLabel" type="Label" parent="Labels"]
