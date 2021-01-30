@@ -1,0 +1,133 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/MainWindowManager.gd" type="Script" id=1]
+
+[node name="MainWindowManager" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 0.667419
+margin_top = 1.41422
+margin_right = 0.66748
+margin_bottom = 1.41418
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BodyText" type="TextEdit" parent="."]
+margin_left = -0.306763
+margin_top = 149.526
+margin_right = 544.693
+margin_bottom = 595.526
+text = "{
+    \"title\": \"foo\",
+   \"body\": \"bar\",
+    \"userId\": \"1\"
+  }"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PostButton" type="Button" parent="."]
+margin_left = 732.181
+margin_top = 31.6233
+margin_right = 868.181
+margin_bottom = 82.6233
+text = "POST"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResultText" type="TextEdit" parent="."]
+margin_left = 548.811
+margin_top = 150.0
+margin_right = 1019.81
+margin_bottom = 596.0
+text = "Response will be printed here."
+readonly = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PostHTTPRequest" type="HTTPRequest" parent="." groups=[
+"HTTPRequests",
+]]
+
+[node name="GetHTTPRequest" type="HTTPRequest" parent="." groups=[
+"HTTPRequests",
+]]
+
+[node name="PutHTTPRequest" type="HTTPRequest" parent="." groups=[
+"HTTPRequests",
+]]
+
+[node name="UrlText" type="TextEdit" parent="."]
+margin_left = 3.0
+margin_top = 80.0
+margin_right = 568.0
+margin_bottom = 120.0
+text = "https://jsonplaceholder.typicode.com/posts"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HeadersText" type="TextEdit" parent="."]
+margin_left = 3.18503
+margin_top = 24.2441
+margin_right = 568.185
+margin_bottom = 64.2441
+text = "Content-Type: application/json; charset=UTF-8"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Labels" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HeadersTooltip" type="Label" parent="Labels"]
+visible = false
+modulate = Color( 1, 1, 1, 0.235294 )
+margin_left = 5.85019
+margin_top = 78.2599
+margin_right = 491.85
+margin_bottom = 92.2599
+text = "Insert headers in the format: Content-Type: application/json; charset=UTF-8"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UrlLabel" type="Label" parent="Labels"]
+margin_left = 3.18503
+margin_top = 65.5789
+margin_right = 43.185
+margin_bottom = 79.5789
+text = "URL"
+
+[node name="HeadersLabel" type="Label" parent="Labels"]
+margin_left = 2.77795
+margin_top = 9.93949
+margin_right = 55.778
+margin_bottom = 23.9395
+text = "Headers"
+
+[node name="BodyLabel" type="Label" parent="Labels"]
+margin_left = 3.18503
+margin_top = 135.176
+margin_right = 43.185
+margin_bottom = 149.176
+text = "Body"
+
+[node name="ResponseLabel" type="Label" parent="Labels"]
+margin_left = 556.0
+margin_top = 135.176
+margin_right = 618.0
+margin_bottom = 149.176
+text = "Response"
+[connection signal="button_up" from="PostButton" to="." method="_on_PostButton_button_up"]
+[connection signal="request_completed" from="PostHTTPRequest" to="." method="_on_PostHTTPRequest_request_completed"]
+[connection signal="request_completed" from="GetHTTPRequest" to="." method="_on_GetHTTPRequest_request_completed"]
+[connection signal="request_completed" from="PutHTTPRequest" to="." method="_on_PutHTTPRequest_request_completed"]
