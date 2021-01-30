@@ -153,7 +153,10 @@ margin_left = 971.247
 margin_top = -1.88775
 margin_right = 1011.25
 margin_bottom = 12.1123
-text = "v 0.1.0"
+text = "v0.2.0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="button_up" from="PostButton" to="." method="_on_PostButton_button_up"]
 [connection signal="button_up" from="GetButton" to="." method="_on_GetButton_button_up"]
 [connection signal="button_up" from="PutButton" to="." method="_on_PutButton_button_up"]

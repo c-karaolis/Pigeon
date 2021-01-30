@@ -62,4 +62,3 @@ func get_refreshed_textbox_values() -> Dictionary:
 		"RequestBody":_body
 	}
 	return _returnValues
-
