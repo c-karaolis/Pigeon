@@ -15,6 +15,8 @@ PUT request is not implemented. I have no personal use for it at the moment.
 
 I will update and add a feature to the project mostly if I have a need for it while using the client.
 
+Add headers by splitting them with the | character. See the default example. 
+
 Project took ~5 hours.
 
 The project is totally not tested. The only assertion I can make is that it just works for me on my machine. :)
