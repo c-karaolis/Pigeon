@@ -17,4 +17,6 @@ I will update and add a feature to the project mostly if I have a need for it wh
 
 Project took ~5 hours.
 
+The project is totally not tested. The only assertion I can make is that it just works for me on my machine. :)
+
 If you need something you can contact me on LinkedIn: https://www.linkedin.com/in/constantinos-karaolis-03b0b8100/
