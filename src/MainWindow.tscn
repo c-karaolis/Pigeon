@@ -29,11 +29,31 @@ __meta__ = {
 }
 
 [node name="PostButton" type="Button" parent="."]
-margin_left = 732.181
-margin_top = 31.6233
-margin_right = 868.181
-margin_bottom = 82.6233
+margin_left = 584.915
+margin_top = 23.9395
+margin_right = 720.915
+margin_bottom = 74.9395
 text = "POST"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GetButton" type="Button" parent="."]
+margin_left = 732.181
+margin_top = 23.9395
+margin_right = 868.181
+margin_bottom = 74.9395
+text = "GET"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PutButton" type="Button" parent="."]
+margin_left = 879.835
+margin_top = 23.9395
+margin_right = 1015.84
+margin_bottom = 74.9395
+text = "PUT"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -127,7 +147,16 @@ margin_top = 135.176
 margin_right = 618.0
 margin_bottom = 149.176
 text = "Response"
+
+[node name="VersionLabel" type="Label" parent="Labels"]
+margin_left = 971.247
+margin_top = -1.88775
+margin_right = 1011.25
+margin_bottom = 12.1123
+text = "v 0.1.0"
 [connection signal="button_up" from="PostButton" to="." method="_on_PostButton_button_up"]
+[connection signal="button_up" from="GetButton" to="." method="_on_GetButton_button_up"]
+[connection signal="button_up" from="PutButton" to="." method="_on_PutButton_button_up"]
 [connection signal="request_completed" from="PostHTTPRequest" to="." method="_on_PostHTTPRequest_request_completed"]
 [connection signal="request_completed" from="GetHTTPRequest" to="." method="_on_GetHTTPRequest_request_completed"]
 [connection signal="request_completed" from="PutHTTPRequest" to="." method="_on_PutHTTPRequest_request_completed"]
