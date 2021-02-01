@@ -153,13 +153,30 @@ margin_left = 971.247
 margin_top = -1.88775
 margin_right = 1011.25
 margin_bottom = 12.1123
-text = "v0.2.0"
+text = "v0.3.0"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="ValidationLabel" type="Label" parent="Labels"]
+margin_left = 193.0
+margin_top = 135.0
+margin_right = 543.0
+margin_bottom = 149.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ValidateJSONButton" type="Button" parent="."]
+margin_left = 42.7027
+margin_top = 129.059
+margin_right = 140.703
+margin_bottom = 149.059
+text = "Validate JSON"
 [connection signal="button_up" from="PostButton" to="." method="_on_PostButton_button_up"]
 [connection signal="button_up" from="GetButton" to="." method="_on_GetButton_button_up"]
 [connection signal="button_up" from="PutButton" to="." method="_on_PutButton_button_up"]
 [connection signal="request_completed" from="PostHTTPRequest" to="." method="_on_PostHTTPRequest_request_completed"]
 [connection signal="request_completed" from="GetHTTPRequest" to="." method="_on_GetHTTPRequest_request_completed"]
 [connection signal="request_completed" from="PutHTTPRequest" to="." method="_on_PutHTTPRequest_request_completed"]
+[connection signal="button_up" from="ValidateJSONButton" to="." method="_on_ValidateJSONButton_button_up"]
