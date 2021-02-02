@@ -3,6 +3,7 @@
 .import/
 export.cfg
 export_presets.cfg
+builds/pre-release/*.zip
 
 # Mono-specific ignores
 .mono/
